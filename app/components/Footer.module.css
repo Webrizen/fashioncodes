@@ -1,0 +1,13 @@
+/* Footer.module.css */
+.footer {
+    background-color: #fff;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer__text {
+    color: #333333;
+    font-size: 14px;
+  }
+  
