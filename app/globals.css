@@ -26,19 +26,33 @@ img {
   pointer-events: none;
   user-select: none;
 }
-button{
+
+button {
   padding: 10px 20px;
-  border: 0.1px solid rgba(0,0,0,0.1);
+  border: 0.1px solid rgba(0, 0, 0, 0.1);
   border-radius: 4px;
   width: min-content;
   white-space: nowrap;
   cursor: pointer;
   transition: all 0.1s;
 }
-button:hover{
+
+button:hover {
   background: #1f1f1f;
   color: #f1f1f1;
 }
+
+input,
+textarea,
+select {
+  outline: none;
+  padding: 10px 20px;
+  border: none;
+  background: initial;
+  width: 100%;
+  white-space: nowrap;
+}
+
 /* ===== Scrollbar CSS ===== */
 
 /* Firefox */
@@ -60,5 +74,5 @@ body::-webkit-scrollbar-thumb {
   border-radius: 0px !important;
   border: 0px solid transparent !important;
 }
-@media only screen and (max-width: 768px) {
-}
+
+@media only screen and (max-width: 768px) {}

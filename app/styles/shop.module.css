@@ -13,3 +13,80 @@
     border: 0.1px solid rgba(0,0,0,0.1);
     border-radius: 10px;
 }
+.leftShop{
+    padding: 10px;
+    position: relative;
+}
+.leftShop h4{
+    padding: 10px;
+}
+.ico{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 5%;
+    transition: all 0.1s;
+    cursor: pointer;
+    background: linear-gradient(50deg, #d15f72, #ecaa72);
+    color: #fff;
+}
+.ico:hover{
+    background: rgba(0,0,0,0.1);
+}
+.searchBox{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border: 0.1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+.catagories{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.catagories span{
+    padding: 0px 10px;
+    color: rgba(0,0,0,0.4);
+    font-size: 12px;
+}
+.catagories select{
+    border-bottom: 0.1px solid rgba(0,0,0,0.1) !important;
+    border-radius: 0px;
+    padding: 15px;
+}
+.rightShop{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 10px;
+    padding: 10px;
+    overflow: hidden;
+}
+.rightShop .card{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 10px;
+    width: 100%;
+    height:auto;
+    background: #fff;
+    border: 0.1px solid rgba(0,0,0,0.1);
+    border-radius: 10px;
+    cursor: pointer;
+}
+.card img{
+    width: auto;
+    height: 400px;
+}
+.card span{
+    color: green;
+}
+.card .cutprice{
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.4);
+}

@@ -4,7 +4,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 10px;
-    background: linear-gradient(50deg, #a93d90, #8026b8, #4c1b72, #d15f72, #ecaa72);
+    /* background: linear-gradient(50deg, #a93d90, #8026b8, #4c1b72, #d15f72, #ecaa72); */
+    background: linear-gradient(50deg, #a93d90, #d15f72, #ecaa72);
     margin: 10px auto;
     overflow: hidden;
     border-radius: 10px;
