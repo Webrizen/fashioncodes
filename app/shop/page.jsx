@@ -110,7 +110,6 @@ const page = () => {
               src={product.image}
               alt="Product Image"
               width={0}
-              loading="lazy"
               height={0}
               style={{ width: "auto", height: "400px", margin: "0 auto" }}
             />
