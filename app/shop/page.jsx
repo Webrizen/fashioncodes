@@ -1,13 +1,13 @@
 "use client";
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/shop.module.css";
-import { BiSearch, BiStar } from "react-icons/bi";
+import { BiHeart, BiSearch } from "react-icons/bi";
 import Image from "next/image";
-import Logo from "@/app/assets/logo.png";
 import Link from "next/link";
 
 const page = () => {
   const [products, setProducts] = useState([]);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -15,6 +15,7 @@ const page = () => {
         const response = await fetch("http://localhost:3000/api");
         const data = await response.json();
         setProducts(data);
+        setLoading(false);
       } catch (error) {
         console.log(error);
       }
@@ -89,31 +90,48 @@ const page = () => {
           </div>
         </div>
         <div className={styles.rightShop}>
-          {products.map((product, index) => (
-            <div className={styles.card} key={index}>
-              <Image
-                src={product.image}
-                alt="Product Image"
-                width={0}
-                loading = 'lazy'
-                height={0}
-                placeholder={blur}
-                style={{ width: "auto", height: "400px", margin: "0 auto" }}
-              />
-              <h4>{product.title}</h4>
-              <div>
-                <span>${product.price}</span>
-                {"  "}
-                {"  "}
-                <span className={styles.cutprice}>$5000</span>
-              </div>
-              <p>{product.description}</p>
-              <Link href={`/product/${index}`}>
-                <button>Browse</button>
-              </Link>
+        {loading ? (
+        // Show advanced skeleton while data is being fetched
+        Array.from({ length: 4 }).map((_, index) => (
+          <div className={styles.cardSkeleton} key={index}>
+            <div className={styles.imageSkeleton}></div>
+            <div className={styles.contentSkeleton}>
+              <div className={styles.titleSkeleton}></div>
+              <div className={styles.priceSkeleton}></div>
+              <div className={styles.descriptionSkeleton}></div>
             </div>
-          ))}
-        </div>
+          </div>
+        ))
+      ) : (
+        // Render products once data is loaded
+        products.map((product, index) => (
+          <div className={styles.card} key={index}>
+            <Image
+              src={product.image}
+              alt="Product Image"
+              width={0}
+              loading="lazy"
+              height={0}
+              style={{ width: "auto", height: "400px", margin: "0 auto" }}
+            />
+            <h4>{product.title}</h4>
+            <div>
+              <span>${product.price}</span>
+              {"  "}
+              {"  "}
+              <span className={styles.cutprice}>$5000</span>
+            </div>
+            <p>{product.description}</p>
+            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
+            <Link href={`/product/${index}`}>
+              <button>Browse</button>
+            </Link>
+            <div className={styles.ico}><BiHeart/></div>
+            </div>
+          </div>
+        ))
+      )}
+    </div>
       </div>
     </>
   );

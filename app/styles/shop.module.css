@@ -78,6 +78,7 @@
     border: 0.1px solid rgba(0,0,0,0.1);
     border-radius: 10px;
     cursor: pointer;
+    transition: 0.1s;
 }
 .card img{
     width: auto;
@@ -90,3 +91,54 @@
     text-decoration: line-through;
     color: rgba(0,0,0,0.4);
 }
+.card:hover{
+    box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.4);
+}
+/* styles.module.css */
+.cardSkeleton {
+    display: flex;
+    flex-direction: column;
+    background-color: #f3f3f3;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+  }
+  
+  .imageSkeleton {
+    height: 200px;
+    background-color: #ddd;
+    border-radius: 4px;
+    margin-bottom: 16px;
+  }
+  
+  .contentSkeleton {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+  }
+  
+  .titleSkeleton {
+    height: 20px;
+    width: 80%;
+    background-color: #ddd;
+  }
+  
+  .priceSkeleton {
+    height: 16px;
+    width: 60%;
+    background-color: #ddd;
+  }
+  
+  .descriptionSkeleton {
+    height: 40px;
+    width: 50%;
+    background-color: #ddd;
+  }
+  @media only screen and (max-width: 768px) {
+    .leftShop{
+        display: none;
+    }
+    .rightShop{
+        grid-template-columns: 1fr;
+    }
+  }
