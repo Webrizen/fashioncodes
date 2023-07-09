@@ -1,4 +1,4 @@
-.shop{
+.shop {
     width: 98%;
     height: 81vh;
     display: grid;
@@ -7,20 +7,25 @@
     overflow-y: scroll;
     margin: 10px auto;
 }
-.leftShop, .rightShop{
+
+.leftShop,
+.rightShop {
     width: 100%;
     height: 100%;
-    border: 0.1px solid rgba(0,0,0,0.1);
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
-.leftShop{
+
+.leftShop {
     padding: 10px;
     position: relative;
 }
-.leftShop h4{
+
+.leftShop h4 {
     padding: 10px;
 }
-.ico{
+
+.ico {
     width: 45px;
     height: 45px;
     display: flex;
@@ -32,68 +37,80 @@
     background: linear-gradient(50deg, #d15f72, #ecaa72);
     color: #fff;
 }
-.ico:hover{
-    background: rgba(0,0,0,0.1);
+
+.ico:hover {
+    background: rgba(0, 0, 0, 0.1);
 }
-.searchBox{
+
+.searchBox {
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     background: #fff;
-    border: 0.1px solid rgba(0,0,0,0.1);
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     overflow: hidden;
 }
-.catagories{
+
+.catagories {
     display: flex;
     flex-direction: column;
     gap: 10px;
 }
-.catagories span{
+
+.catagories span {
     padding: 0px 10px;
-    color: rgba(0,0,0,0.4);
+    color: rgba(0, 0, 0, 0.4);
     font-size: 12px;
 }
-.catagories select{
-    border-bottom: 0.1px solid rgba(0,0,0,0.1) !important;
+
+.catagories select {
+    border-bottom: 0.1px solid rgba(0, 0, 0, 0.1) !important;
     border-radius: 0px;
     padding: 15px;
 }
-.rightShop{
+
+.rightShop {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     gap: 10px;
     padding: 10px;
     overflow: hidden;
 }
-.rightShop .card{
+
+.rightShop .card {
     display: flex;
     flex-direction: column;
     gap: 10px;
     padding: 10px;
     width: 100%;
-    height:auto;
+    height: auto;
     background: #fff;
-    border: 0.1px solid rgba(0,0,0,0.1);
+    border: 0.1px solid rgba(0, 0, 0, 0.1);
     border-radius: 10px;
     cursor: pointer;
     transition: 0.1s;
 }
-.card img{
+
+.card img {
     width: auto;
     height: 400px;
 }
-.card span{
+
+.card span {
     color: green;
 }
-.card .cutprice{
+
+.card .cutprice {
     text-decoration: line-through;
-    color: rgba(0,0,0,0.4);
+    color: rgba(0, 0, 0, 0.4);
 }
-.card:hover{
-    box-shadow: -1px -1px 10px 0px rgba(0,0,0,0.4);
+
+.card:hover {
+    box-shadow: -1px -1px 10px 0px rgba(0, 0, 0, 0.4);
 }
+
 /* styles.module.css */
 .cardSkeleton {
     display: flex;
@@ -102,46 +119,125 @@
     border-radius: 8px;
     padding: 20px;
     margin-bottom: 20px;
-  }
-  
-  .imageSkeleton {
+    animation: cardSkeletonAnimation 1s ease-in-out infinite;
+}
+
+@keyframes cardSkeletonAnimation {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.imageSkeleton {
     height: 200px;
     background-color: #ddd;
     border-radius: 4px;
     margin-bottom: 16px;
-  }
-  
-  .contentSkeleton {
+    animation: imageSkeletonAnimation 1s ease-in-out infinite;
+}
+
+@keyframes imageSkeletonAnimation {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.contentSkeleton {
     display: flex;
     flex-direction: column;
     gap: 8px;
-  }
-  
-  .titleSkeleton {
+}
+
+.titleSkeleton {
     height: 20px;
     width: 80%;
     background-color: #ddd;
-  }
-  
-  .priceSkeleton {
+    animation: titleSkeletonAnimation 1s ease-in-out infinite;
+}
+
+@keyframes titleSkeletonAnimation {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+
+.priceSkeleton {
     height: 16px;
     width: 60%;
     background-color: #ddd;
-  }
-  
-  .descriptionSkeleton {
+    animation: priceSkeletonAnimation 1s ease-in-out infinite;
+}
+
+@keyframes priceSkeletonAnimation {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+.descriptionSkeleton {
     height: 40px;
     width: 50%;
     background-color: #ddd;
-  }
-  @media only screen and (max-width: 768px) {
-    .shop{
+    animation: descriptionSkeletonAnimation 1s ease-in-out infinite;
+}
+
+@keyframes descriptionSkeletonAnimation {
+    0% {
+        opacity: 0.7;
+    }
+
+    50% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0.7;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .shop {
         grid-template-columns: 1fr;
     }
-    .leftShop{
+
+    .leftShop {
         display: none;
     }
-    .rightShop{
+
+    .rightShop {
         grid-template-columns: 1fr;
     }
-  }
+}
