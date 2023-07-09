@@ -1,0 +1,29 @@
+.container {
+   width: 100%;
+   height: auto;
+   padding: 200px 10px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   text-align: center;
+   flex-direction: column;
+  }
+  
+  .title {
+    font-size: 3rem;
+    color: #333;
+    margin-bottom: 1rem;
+  }
+  
+  .description {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 2rem;
+  }
+  
+  .image {
+    max-width: 400px;
+    height: 400px;
+    width: 100%;
+  }
+  

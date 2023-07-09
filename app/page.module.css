@@ -47,7 +47,15 @@
     mix-blend-mode: multiply;
     height: 100%;
 }
-/* .offerIco{
-    width: 30%;
-    height: 30%;
-} */
+@media only screen and (max-width: 768px) {
+    .hero{
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+    .left{
+        padding: 20px;
+    }
+    .right img{
+        width: 90%;
+    }
+}
