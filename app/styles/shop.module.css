@@ -135,6 +135,9 @@
     background-color: #ddd;
   }
   @media only screen and (max-width: 768px) {
+    .shop{
+        grid-template-columns: 1fr;
+    }
     .leftShop{
         display: none;
     }
