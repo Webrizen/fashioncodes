@@ -1,60 +1,96 @@
 "use client";
-import { useEffect, useState } from 'react';
+import { useContext } from 'react';
+import { CartContext } from '../CartContext';
 import styles from '@/app/styles/Cart.module.css';
 
-const page = () => {
-  const [productData, setProductData] = useState(null); // Use null as initial state
-  const id = localStorage.getItem('cartProductId');
-  console.log(id);
+const Page = () => {
+  const { cart, removeFromCart, clearCart, updateCartQuantity } = useContext(CartContext);
 
-  // Define the API URL
-  const apiUrl = "/api";
+  const handleRemoveFromCart = (productId) => {
+    removeFromCart(productId);
+  };
 
-  // Create a function to make the POST request
-  const fetchData = async () => {
-    try {
-      const response = await fetch(apiUrl, {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ id }), // Pass the ID as JSON in the request body
-      });
+  const handleClearCart = () => {
+    clearCart();
+  };
 
-      const data = await response.json();
-      console.log(data); // Print the response data
-      setProductData(data);
-    } catch (error) {
-      console.error("Error:", error);
+  const handleDecreaseQuantity = (productId) => {
+    const product = cart.find((item) => item.id === productId);
+    if (product.quantity > 1) {
+      updateCartQuantity(productId, product.quantity - 1);
     }
   };
 
-  // Call the fetchData function when the component mounts
-  useEffect(() => {
-    fetchData();
-  }, []);
+  const handleIncreaseQuantity = (productId) => {
+    const product = cart.find((item) => item.id === productId);
+    updateCartQuantity(productId, product.quantity + 1);
+  };
 
-  const {
-    title,
-    image,
-    price,
-    description,
-    ratings,
-    category,
-    size,
-    gender,
-    cutPrice,
-  } = productData || {}; // Destructure the properties from productData or use an empty object
+  const calculateSubtotal = () => {
+    let subtotal = 0;
+    cart.forEach((product) => {
+      subtotal += product.price * product.quantity;
+    });
+    return subtotal;
+  };
 
   return (
-    <>
-    <div className={styles.cartPage}>
+    <div className={styles.cartpage}>
       <h1>Cart</h1>
+      {cart.length === 0 ? (
+        <p>Your cart is empty.</p>
+      ) : (
+        <>
+          <table className={styles.cartTable}>
+            <thead>
+              <tr>
+                <th>Image</th>
+                <th>Title</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              {cart.map((product) => (
+                <tr key={product.id}>
+                  <td>
+                    <img src={product.image} alt={product.title} className={styles.productImage} />
+                  </td>
+                  <td>{product.title}</td>
+                  <td>₹ {product.price}</td>
+                  <td>
+                    <div className={styles.quantity}>
+                      <button onClick={() => handleDecreaseQuantity(product.id)}>-</button>
+                      <span>{product.quantity}</span>
+                      <button onClick={() => handleIncreaseQuantity(product.id)}>+</button>
+                    </div>
+                  </td>
+                  <td>₹ {product.price * product.quantity}</td>
+                  <td>
+                    <button onClick={() => handleRemoveFromCart(product.id)}>Remove</button>
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </>
+      )}
+      {cart.length > 0 && (
+        <div className={styles.cartActions}>
+          <div>
+            <button onClick={handleClearCart} className={styles.clearCartButton}>Clear Cart</button>
+          </div>
+          <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px', justifyContent: 'center' }}>
+            <span>Sub Total: ₹ {calculateSubtotal()}</span>
+            <button className={styles.checkBTN}>Procced To Checkout</button>
+          </div>
+        </div>
+      )}
     </div>
-    </>
   );
-}
+};
 
-export default page;
-
+export default Page;
 

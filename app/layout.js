@@ -1,3 +1,4 @@
+import { CartProvider } from './CartContext';
 import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import './globals.css';
@@ -19,12 +20,14 @@ export default function RootLayout({ children }) {
   return (
     <html lang="en">
       <body className={rubik.className}>
-        <Navbar />
-        <div className='main'>
-        {children}
-        </div>
-        <Footer />
-        <ToastContainer />
+      <CartProvider>
+          <Navbar />
+          <div className='main'>
+            {children}
+          </div>
+          <Footer />
+          <ToastContainer />
+        </CartProvider>
       </body>
     </html>
 

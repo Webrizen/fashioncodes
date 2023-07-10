@@ -1,6 +1,7 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useEffect, useState } from "react";
+import { useEffect, useState, useContext  } from "react";
+import { CartContext } from "@/app/CartContext";
 import styles from "@/app/styles/product.module.css";
 import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
@@ -40,6 +41,8 @@ export default function ProductPage({ params }) {
   const [productData, setProductData] = useState(null); // Use null as initial state
   const router = useRouter()
   const { id } = params;
+  const { addToCart } = useContext(CartContext);
+
 
   // Define the API URL
   const apiUrl = "/api";
@@ -84,11 +87,9 @@ export default function ProductPage({ params }) {
   const handleAddToCart = () => {
    
     //Add Logic here.
-
-
+    addToCart(productData);
     const notify = () => toast("Successfully Added Your Product To Cart!");
     notify();
-    router.push('/cart')
   };
 
   const handleAddToWishList = () => {

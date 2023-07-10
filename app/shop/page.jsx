@@ -119,7 +119,7 @@ const page = () => {
                     <span>${product.price}</span>
                     {"  "}
                     {"  "}
-                    <span className={styles.cutprice}>${product.cutPrice}</span>
+                    <span className={styles.cutprice}>₹{product.cutPrice}</span>
                   </div>
                   <div className={styles.rating} style={{ color: 'gold' }}>
                     {Array.from({ length: Math.floor(product.ratings) }).map(

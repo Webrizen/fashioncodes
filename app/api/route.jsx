@@ -12,6 +12,7 @@ export async function GET() {
       ratings: 4.5,
       category: 'Clothing And Accessories',
       size: 'M',
+      quantity: 1,
       gender: 'men'
     },
     {
@@ -24,6 +25,7 @@ export async function GET() {
       ratings: 3.8,
       category: 'Topwear',
       size: 'L',
+      quantity: 1,
       gender: 'women'
     },
     {
@@ -34,6 +36,7 @@ export async function GET() {
       cutPrice: 90957,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed accusantium, quaerat corrupti ex pariatur harum quasi aliquam voluptas reprehenderit temporibus dolore vitae, ratione molestiae eius ducimus deserunt cum repellendus rerum odio et perferendis, at iste! Possimus quod provident sed odit, fugit dignissimos sapiente nemo sunt a blanditiis dolor neque totam deleniti nisi ducimus nihil quam officia corporis labore dolorem cumque repellendus quaerat. Harum rem iusto rerum molestias eius in. In aperiam excepturi aliquam quae fugit sed consequatur veritatis soluta, cupiditate eos. Quae perferendis obcaecati quam laudantium at a minima, quasi sed, velit, repellat optio nobis ducimus cupiditate ipsum aspernatur!',
       ratings: 4.2,
+      quantity: 1,
       category: 'T-shirts',
       size: 'S',
       gender: 'men'
@@ -46,6 +49,7 @@ export async function GET() {
       cutPrice: 65957,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed accusantium, quaerat corrupti ex pariatur harum quasi aliquam voluptas reprehenderit temporibus dolore vitae, ratione molestiae eius ducimus deserunt cum repellendus rerum odio et perferendis, at iste! Possimus quod provident sed odit, fugit dignissimos sapiente nemo sunt a blanditiis dolor neque totam deleniti nisi ducimus nihil quam officia corporis labore dolorem cumque repellendus quaerat. Harum rem iusto rerum molestias eius in. In aperiam excepturi aliquam quae fugit sed consequatur veritatis soluta, cupiditate eos. Quae perferendis obcaecati quam laudantium at a minima, quasi sed, velit, repellat optio nobis ducimus cupiditate ipsum aspernatur!',
       ratings: 1.2,
+      quantity: 1,
       category: 'T-shirts',
       size: 'S',
       gender: 'women'
@@ -67,6 +71,7 @@ export async function POST(request) {
       ratings: 4.5,
       category: 'Clothing And Accessories',
       size: 'M',
+      quantity: 1,
       gender: 'men'
     },
     {
@@ -79,6 +84,7 @@ export async function POST(request) {
       ratings: 3.8,
       category: 'Topwear',
       size: 'L',
+      quantity: 1,
       gender: 'women'
     },
     {
@@ -89,6 +95,7 @@ export async function POST(request) {
       cutPrice: 90957,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed accusantium, quaerat corrupti ex pariatur harum quasi aliquam voluptas reprehenderit temporibus dolore vitae, ratione molestiae eius ducimus deserunt cum repellendus rerum odio et perferendis, at iste! Possimus quod provident sed odit, fugit dignissimos sapiente nemo sunt a blanditiis dolor neque totam deleniti nisi ducimus nihil quam officia corporis labore dolorem cumque repellendus quaerat. Harum rem iusto rerum molestias eius in. In aperiam excepturi aliquam quae fugit sed consequatur veritatis soluta, cupiditate eos. Quae perferendis obcaecati quam laudantium at a minima, quasi sed, velit, repellat optio nobis ducimus cupiditate ipsum aspernatur!',
       ratings: 4.2,
+      quantity: 1,
       category: 'T-shirts',
       size: 'S',
       gender: 'men'
@@ -101,6 +108,7 @@ export async function POST(request) {
       cutPrice: 65957,
       description: 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero sed accusantium, quaerat corrupti ex pariatur harum quasi aliquam voluptas reprehenderit temporibus dolore vitae, ratione molestiae eius ducimus deserunt cum repellendus rerum odio et perferendis, at iste! Possimus quod provident sed odit, fugit dignissimos sapiente nemo sunt a blanditiis dolor neque totam deleniti nisi ducimus nihil quam officia corporis labore dolorem cumque repellendus quaerat. Harum rem iusto rerum molestias eius in. In aperiam excepturi aliquam quae fugit sed consequatur veritatis soluta, cupiditate eos. Quae perferendis obcaecati quam laudantium at a minima, quasi sed, velit, repellat optio nobis ducimus cupiditate ipsum aspernatur!',
       ratings: 1.2,
+      quantity: 1,
       category: 'T-shirts',
       size: 'S',
       gender: 'women'

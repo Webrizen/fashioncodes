@@ -1,79 +1,8 @@
-/* Cart.module.css */
-.cartPage {
-    max-width: 800px;
-    margin: 0 auto;
-    padding: 20px;
-  }
-  
- .cartPage h1 {
-    font-size: 32px;
-    margin-bottom: 20px;
-  }
-  
-.cartPage  p {
-    margin-bottom: 20px;
-  }
-  
-  .cartTable {
-    width: 100%;
-    border-collapse: collapse;
-  }
-  
-.cartPage  th,
- .cartPage td {
-    padding: 10px;
-    text-align: left;
-  }
-  
- .cartPage th {
-    background-color: #f9f9f9;
-  }
-  
-  .productInfo {
-    display: flex;
-    align-items: center;
-  }
-  
-  .productImage {
-    width: 60px;
-    height: 60px;
-    object-fit: cover;
-    margin-right: 10px;
-  }
-  
-  .productDetails {
-    display: flex;
-    flex-direction: column;
-  }
-  
-  .cartSummary {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 20px;
-  }
-  
- .cartPage button {
-    padding: 8px 16px;
-    background-color: #ff6b6b;
-    color: white;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-  }
-  
- .cartPage button:hover {
-    background-color: #f74b4b;
-  }
-  
- .cartPage span {
-    margin-right: 10px;
-  }
-  
+ 
   /* Cart.module.css */
 
 .cartpage {
-  max-width: 800px;
+  max-width: 80%;
   margin: 0 auto;
   padding: 20px;
 }
@@ -145,4 +74,87 @@
   background-color: #007bff;
   color: #fff;
   cursor: pointer;
+}
+
+.cartPage {
+  margin: 20px;
+}
+
+.cartTable {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.cartTable th,
+.cartTable td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ccc;
+}
+
+.cartTable th {
+  font-weight: bold;
+}
+
+.productImage {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+}
+
+.quantity {
+  display: flex;
+  align-items: center;
+}
+
+.quantity button {
+  width: 25px;
+  height: 25px;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background-color: #ccc;
+  color: #fff;
+  cursor: pointer;
+}
+
+.quantity span {
+  margin: 0 10px;
+}
+
+.clearCartButton {
+  padding: 8px 16px;
+  background: linear-gradient(50deg, #d15f72, #ecaa72);
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.clearCartButton:hover {
+  background: rgba(0,0,0,0.4);
+}
+
+.cartActions{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 10px;
+}
+.checkBTN{
+  background: linear-gradient(50deg, #007bff, navy);
+  color: #f7f7f7;
+  border-radius: 35px;
+}
+@media only screen and (max-width: 768px) {
+  .cartpage{
+    max-width: 100%;
+    overflow-x: scroll;
+    white-space: nowrap;
+  }
+  .cartActions{
+    gap: 20px;
+  }
 }
