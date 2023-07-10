@@ -6,6 +6,8 @@ import { GoDotFill } from "react-icons/go";
 import Image from "next/image";
 import { AiFillStar } from "react-icons/ai";
 import { BiHeart } from "react-icons/bi";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 // Custom Skeleton component
 const Skeleton = () => (
@@ -36,7 +38,7 @@ const Skeleton = () => (
 
 export default function ProductPage({ params }) {
   const [productData, setProductData] = useState(null); // Use null as initial state
-  const navigation = useRouter();
+  const router = useRouter()
   const { id } = params;
 
   // Define the API URL
@@ -66,8 +68,35 @@ export default function ProductPage({ params }) {
     fetchData();
   }, []);
 
-  const { title, image, price, description, ratings, category, size, gender } =
-    productData || {}; // Destructure the properties from productData or use an empty object
+  const {
+    title,
+    image,
+    price,
+    description,
+    ratings,
+    category,
+    size,
+    gender,
+    cutPrice,
+  } = productData || {}; // Destructure the properties from productData or use an empty object
+
+  // Event handler for Add To Cart button
+  const handleAddToCart = () => {
+   
+    //Add Logic here.
+
+
+    const notify = () => toast("Successfully Added Your Product To Cart!");
+    notify();
+    router.push('/cart')
+  };
+
+  const handleAddToWishList = () => {
+    // Save the product ID in the local storage
+    localStorage.setItem("WishList", id);
+    const notify = () => toast("Successfully Added Your Product To Wishlist!");
+    notify();
+  };
 
   return (
     <>
@@ -91,14 +120,15 @@ export default function ProductPage({ params }) {
             <>
               <h1>{title}</h1>
               <div className={styles.ratings}>
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar />
-                <AiFillStar /> ({ratings})
+                {Array.from({ length: Math.floor(ratings) }).map(
+                  (_, i) => (
+                    <AiFillStar key={i} />
+                  )
+                )}{" "}
+                ({ratings})
               </div>
               <h3>
-                ${price} <span className={styles.cutprice}>$5000</span>
+                ${price} <span className={styles.cutprice}>${cutPrice}</span>
               </h3>
               <div className={styles.colors}>
                 <span className={styles.black}></span>
@@ -113,9 +143,16 @@ export default function ProductPage({ params }) {
                 <GoDotFill />
                 <span>Size: {size}</span>
               </div>
-              <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
-                <button>Add To Cart</button>
-                <div className={styles.icoheart}>
+              <div
+                style={{
+                  display: "flex",
+                  flexDirection: "row",
+                  alignItems: "center",
+                  gap: "10px",
+                }}
+              >
+                <button onClick={handleAddToCart}>Add To Cart</button>
+                <div className={styles.icoheart} onClick={handleAddToWishList}>
                   <BiHeart />
                 </div>
               </div>
@@ -125,6 +162,7 @@ export default function ProductPage({ params }) {
           )}
         </div>
       </div>
+      
     </>
   );
 }

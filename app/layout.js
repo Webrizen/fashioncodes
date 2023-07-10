@@ -2,6 +2,8 @@ import Footer from './components/Footer';
 import Navbar from './components/Navbar';
 import './globals.css';
 import { Rubik } from 'next/font/google';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const rubik = Rubik({
   subsets: ['latin'],
@@ -22,6 +24,7 @@ export default function RootLayout({ children }) {
         {children}
         </div>
         <Footer />
+        <ToastContainer />
       </body>
     </html>
 
