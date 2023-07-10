@@ -12,7 +12,7 @@ const page = () => {
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await fetch("http://localhost:3000/api");
+        const response = await fetch("/api");
         const data = await response.json();
         setProducts(data);
         setLoading(false);
@@ -125,7 +125,7 @@ const page = () => {
             <Link href={`/product/${index}`}>
               <button>Browse</button>
             </Link>
-            <div className={styles.ico}><BiHeart/></div>
+            <div className={styles.icoheart}><BiHeart/></div>
             </div>
           </div>
         ))
