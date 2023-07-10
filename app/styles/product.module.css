@@ -93,6 +93,114 @@
 .icoheart:hover {
     background: rgba(0, 0, 0, 0.1);
 }
+
+/* product.module.css */
+
+@keyframes skeletonPulse {
+    0% {
+      opacity: 0.6;
+    }
+    50% {
+      opacity: 1;
+    }
+    100% {
+      opacity: 0.6;
+    }
+  }
+  
+  .skeleton {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    height: 80vh;
+  }
+  
+  .skeletonImage {
+    width: 100%;
+    height: 100%;
+    background-color: #e1e1e1;
+    border-radius: 8px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonContent {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .skeletonTitle {
+    width: 100%;
+    height: 24px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonRatings {
+    width: 100px;
+    height: 16px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonPrice {
+    width: 80px;
+    height: 24px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonColors {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .skeletonColors > span {
+    width: 20px;
+    height: 20px;
+    background-color: #e1e1e1;
+    border-radius: 50%;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonDescription {
+    width: 100%;
+    height: 80px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonOther {
+    width: 100%;
+    height: 16px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+  .skeletonButtons {
+    display: flex;
+    gap: 10px;
+  }
+  
+  .skeletonButtons > button {
+    width: 100px;
+    height: 32px;
+    background-color: #e1e1e1;
+    border-radius: 4px;
+    animation: skeletonPulse 1.5s ease-in-out infinite;
+  }
+  
+
 @media only screen and (max-width: 768px) {
     .productpage{
         grid-template-columns: 1fr;
