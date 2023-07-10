@@ -1,0 +1,12 @@
+/* styles/About.module.css */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 20px;
+  height: 81vh;
+}
+
+.content {
+  margin-top: 20px;
+  line-height: 1.5;
+}

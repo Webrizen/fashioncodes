@@ -90,47 +90,55 @@ const page = () => {
           </div>
         </div>
         <div className={styles.rightShop}>
-        {loading ? (
-        // Show advanced skeleton while data is being fetched
-        Array.from({ length: 4 }).map((_, index) => (
-          <div className={styles.cardSkeleton} key={index}>
-            <div className={styles.imageSkeleton}></div>
-            <div className={styles.contentSkeleton}>
-              <div className={styles.titleSkeleton}></div>
-              <div className={styles.priceSkeleton}></div>
-              <div className={styles.descriptionSkeleton}></div>
-            </div>
-          </div>
-        ))
-      ) : (
-        // Render products once data is loaded
-        products.map((product, index) => (
-          <div className={styles.card} key={index}>
-            <Image
-              src={product.image}
-              alt="Product Image"
-              width={0}
-              height={0}
-              style={{ width: "auto", height: "400px", margin: "0 auto" }}
-            />
-            <h4>{product.title}</h4>
-            <div>
-              <span>${product.price}</span>
-              {"  "}
-              {"  "}
-              <span className={styles.cutprice}>$5000</span>
-            </div>
-            <p>{product.description}</p>
-            <div style={{ display: 'flex', flexDirection: 'row', alignItems: 'center', gap: '10px' }}>
-            <Link href={`/product/${index}`}>
-              <button>Browse</button>
-            </Link>
-            <div className={styles.icoheart}><BiHeart/></div>
-            </div>
-          </div>
-        ))
-      )}
-    </div>
+          {loading
+            ? // Show advanced skeleton while data is being fetched
+              Array.from({ length: 4 }).map((_, index) => (
+                <div className={styles.cardSkeleton} key={index}>
+                  <div className={styles.imageSkeleton}></div>
+                  <div className={styles.contentSkeleton}>
+                    <div className={styles.titleSkeleton}></div>
+                    <div className={styles.priceSkeleton}></div>
+                    <div className={styles.descriptionSkeleton}></div>
+                  </div>
+                </div>
+              ))
+            : // Render products once data is loaded
+              products.map((product, index) => (
+                <div className={styles.card} key={index}>
+                  <Image
+                    src={product.image}
+                    alt="Product Image"
+                    width={400}
+                    height={600}
+                    style={{ width: "auto", height: "400px", margin: "0 auto" }}
+                    objectFit="contain"
+                  />
+                  <h4>{product.title}</h4>
+                  <div>
+                    <span>${product.price}</span>
+                    {"  "}
+                    {"  "}
+                    <span className={styles.cutprice}>$5000</span>
+                  </div>
+                  <p>{product.description}</p>
+                  <div
+                    style={{
+                      display: "flex",
+                      flexDirection: "row",
+                      alignItems: "center",
+                      gap: "10px",
+                    }}
+                  >
+                    <Link href={`/product/${index}`}>
+                      <button>Browse</button>
+                    </Link>
+                    <div className={styles.icoheart}>
+                      <BiHeart />
+                    </div>
+                  </div>
+                </div>
+              ))}
+        </div>
       </div>
     </>
   );
