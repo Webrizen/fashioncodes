@@ -85,3 +85,6 @@
  .infoSection textarea {
     height: 120px;
   }
+  @media only screen and (max-width: 768px) {
+    
+  }

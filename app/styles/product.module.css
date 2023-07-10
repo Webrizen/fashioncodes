@@ -1,0 +1,105 @@
+.productpage{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    width: 70%;
+    margin: 10px auto;
+    padding: 100px 10px;
+    gap: 10px;
+}
+.leftProduct{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #fff;
+    border-radius: 10px;
+}
+.leftProduct img{
+    mix-blend-mode: multiply;
+}
+.rightProduct{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.rightProduct h1{
+    font-size: xxx-large;
+}
+.rightProduct .ratings{
+    display: flex;
+    align-items: center;
+}
+.rightProduct .ratings svg{
+    color: gold;
+}
+.rightProduct h3{
+    color: #333;
+}
+.cutprice{
+    text-decoration: line-through;
+    color: rgba(0,0,0,0.4);
+}
+.colors{
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+.colors .black{
+    width: 20px ;
+    height: 20px ;
+    border-radius: 50%;
+    background: #000;
+    cursor: pointer;
+}
+.colors .red{
+    width: 20px ;
+    height: 20px ;
+    border-radius: 50%;
+    background: red;
+    cursor: pointer;
+}
+.colors .blue{
+    width: 20px ;
+    height: 20px ;
+    border-radius: 50%;
+    background: navy;
+    cursor: pointer;
+}
+
+.colors .black:active, .black:active, .red:active{
+    border: 1px solid silver;
+}
+.rightProduct .other{
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    color: rgba(0,0,0,0.6);
+    font-size: 12px;
+    white-space: nowrap;
+}
+.icoheart {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    transition: all 0.1s;
+    cursor: pointer;
+    background: linear-gradient(50deg, #d15f72, #ecaa72);
+    color: #fff;
+}
+
+.icoheart:hover {
+    background: rgba(0, 0, 0, 0.1);
+}
+@media only screen and (max-width: 768px) {
+    .productpage{
+        grid-template-columns: 1fr;
+        padding: 10px;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+    }
+}

@@ -2,6 +2,7 @@
 import { useState, useEffect } from "react";
 import styles from "@/app/styles/shop.module.css";
 import { BiHeart, BiSearch } from "react-icons/bi";
+import { AiFillStar } from 'react-icons/ai';
 import Image from "next/image";
 import Link from "next/link";
 
@@ -120,7 +121,14 @@ const page = () => {
                     {"  "}
                     <span className={styles.cutprice}>$5000</span>
                   </div>
-                  <p>{product.description}</p>
+                  <div className={styles.rating} style={{ color: 'gold' }}>
+                    {Array.from({ length: Math.floor(product.ratings) }).map(
+                      (_, i) => (
+                        <AiFillStar key={i} />
+                      )
+                    )}
+                  </div>
+                  <p style={{ height: '40px', overflow: 'hidden' }}>{product.description}</p>
                   <div
                     style={{
                       display: "flex",
@@ -129,7 +137,7 @@ const page = () => {
                       gap: "10px",
                     }}
                   >
-                    <Link href={`/product/${index}`}>
+                    <Link href={`/product/${product.id}`}>
                       <button>Browse</button>
                     </Link>
                     <div className={styles.icoheart}>
