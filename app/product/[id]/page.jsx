@@ -41,7 +41,7 @@ export default function ProductPage({ params }) {
   const [productData, setProductData] = useState(null); // Use null as initial state
   const router = useRouter()
   const { id } = params;
-  const { addToCart } = useContext(CartContext);
+  const { addToCart, addToWishList } = useContext(CartContext);
 
 
   // Define the API URL
@@ -93,8 +93,7 @@ export default function ProductPage({ params }) {
   };
 
   const handleAddToWishList = () => {
-    // Save the product ID in the local storage
-    localStorage.setItem("WishList", id);
+    addToWishList(productData);
     const notify = () => toast("Successfully Added Your Product To Wishlist!");
     notify();
   };
@@ -129,7 +128,7 @@ export default function ProductPage({ params }) {
                 ({ratings})
               </div>
               <h3>
-                ${price} <span className={styles.cutprice}>${cutPrice}</span>
+              ₹{price} <span className={styles.cutprice}>₹{cutPrice}</span>
               </h3>
               <div className={styles.colors}>
                 <span className={styles.black}></span>

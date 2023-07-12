@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { FaShoppingCart } from 'react-icons/fa';
 import Logo from '@/app/assets/logo.png';
 import Image from 'next/image';
+import { BiHeart } from 'react-icons/bi';
 
 const Navbar = () => {
 
@@ -21,9 +22,14 @@ const Navbar = () => {
           <Link href='/contact'>Contact</Link>
         </div>
         <div className={styles.icons}>
-          <Link href='/cart'>
+          <Link href='/cart' title='Your Cart'>
           <div className={styles.ico}>
             <FaShoppingCart/>
+          </div>
+          </Link>
+          <Link href='/wishlist' title='Your Wishlist'>
+          <div className={styles.ico}>
+            <BiHeart/>
           </div>
           </Link>
         </div>
